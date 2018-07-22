@@ -51,6 +51,7 @@ class ViewController: UIViewController {
     //shake gesture has ended :
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         updateDiceImages()
+        playSound()
     }
     func playSound(){
         //select random number cuz note1,note2,note3...note[n]
