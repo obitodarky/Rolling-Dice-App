@@ -53,7 +53,9 @@ class ViewController: UIViewController {
         updateDiceImages()
     }
     func playSound(){
+        //select random number cuz note1,note2,note3...note[n]
         let randomNumber = Int(arc4random_uniform(7))
+        //create the sound
         if let soundURL = Bundle.main.url(forResource: "note\(randomNumber)", withExtension: ".wav"){
             var mySound: SystemSoundID = 0
             AudioServicesCreateSystemSoundID(soundURL as CFURL, &mySound)
