@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox //the audio module
 
 class ViewController: UIViewController {
 
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
     
     @IBAction func rollingDice(_ sender: UIButton) {
         updateDiceImages()
+        playSound()
     }
     
     func updateDiceImages(){
@@ -45,9 +47,19 @@ class ViewController: UIViewController {
         diceImageView1.image = UIImage(named: diceArray[randomDiceIndex1])
         diceImageView2.image = UIImage(named: diceArray[randomDiceIndex2])
     }
+    
+    //shake gesture has ended :
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         updateDiceImages()
     }
-
+    func playSound(){
+        let randomNumber = Int(arc4random_uniform(7))
+        if let soundURL = Bundle.main.url(forResource: "note\(randomNumber)", withExtension: ".wav"){
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundURL as CFURL, &mySound)
+            //Play
+            AudioServicesPlaySystemSound(mySound)
+        }
+    }
 }
 
