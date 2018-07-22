@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //generates random dice when app is opened
+        updateDiceImages()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,16 +32,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func rollingDice(_ sender: UIButton) {
+        updateDiceImages()
+    }
+    
+    func updateDiceImages(){
         
         //creates a random number excluding 6 , [0,6]
         randomDiceIndex1 = Int(arc4random_uniform(6))
         randomDiceIndex2 = Int(arc4random_uniform(6))
-
+        
         //change the diceimageview outlet to randomized number using array
         diceImageView1.image = UIImage(named: diceArray[randomDiceIndex1])
         diceImageView2.image = UIImage(named: diceArray[randomDiceIndex2])
     }
-    
+
 
 }
 
