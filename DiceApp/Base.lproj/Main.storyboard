@@ -42,11 +42,18 @@
                                 <state key="normal" title="Roll the dice">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="rollingDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pgt-uo-cOR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="diceImageView1" destination="WJW-hR-QqB" id="SDo-MT-KjJ"/>
+                        <outlet property="diceImageView2" destination="1bQ-gA-eTs" id="fd5-WS-FrJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
